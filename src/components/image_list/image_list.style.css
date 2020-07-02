@@ -1,6 +1,54 @@
 .hands{
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-around;
  align-items: center;
  padding-top: 100px;
+ 
+}
+
+
+
+#rock-btn{
+  cursor: pointer;
+  background-color:#503e3e;
+  border-radius: 50%;
+  border: 2px double black;
+}
+
+#paper-btn{
+  cursor: pointer;
+  background-color:rgb(69, 102, 116);
+  border-radius: 50%;
+  border: 2px double black;
+}
+
+
+#scissors-btn{
+  cursor: pointer;
+  background-color: #503e3e;
+  border-radius: 50%;
+  border: 2px double black;
+}
+
+
+
+
+
+#rock-btn:hover{
+  cursor: pointer;
+  background-color:rgb(3, 42, 17);
+  
+}
+
+#paper-btn:hover{
+  background-color:rgb(3, 42, 17);
+
+}
+
+
+#scissors-btn:hover{
+  cursor: pointer;
+  background-color: rgb(3, 42, 17);
+  
+  
 }
