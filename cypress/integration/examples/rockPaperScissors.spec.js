@@ -6,7 +6,7 @@ describe('Rock paper scissors game', () => {
 
   describe('RPS game interface', () => {
     it('title should be displayed', () => {
-      cy.get('#header').should('contain', Rock Paper Scissors); 
+      cy.get('#header').should('contain', 'Rock Paper Scissors'); 
     })
   })
 
