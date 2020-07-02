@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './image_list.style.css'
 
 const ImageList = () => {
   return (
 
-    <>
-      <div id= "rock-btn">
+    <div className = "hands">
+      
+      <div id="rock-btn">
         <img src = "/images/rock.png" alt=""/>
       </div>
       
@@ -17,7 +19,7 @@ const ImageList = () => {
       </div>
       
       
-    </>
+    </div>
   )
 }
 
