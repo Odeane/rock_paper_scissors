@@ -11,23 +11,56 @@ class App extends Component {
     super();
     this.state = {
       userOne: '',
-      computer: ''
+      computer: '',
+      winner:''
     }
   }
 
-  playGame = () => {
+  playGame = (rules) => {
+    let counter = 0;
+    let gameInterval = setInterval(() => {
+      counter++;
     this.setState({
-      computer: weapons[Math.floor(Math.random() * 3)]
+      computer: weapons[Math.floor(Math.random() * 3)],
+  
     });
+      if (counter > 5) {
+        clearInterval(gameInterval);
+        this.setState({
+          winner: this.selectWinner()
+        });
+      }
+    }, 100);
+    
   }
 
-  
+  // Logic......
+  selectWinner = () => {
+    const { userOne, computer} = this.state;
 
+    if (userOne === computer) {
+      return "Oops it's a Tie!";
+    } else if (
+      (userOne === "rock" && computer === "scissors") ||
+      (userOne === "scissors" && computer === "paper") ||
+      (userOne === "paper" && computer === "rock")
+    ) {
+      return "User One Wins!";
+    } else {
+      return "Computer Wins!";
+    }
+  };
+ 
+
+
+  
+ 
   
 
 
 
   render() {
+    
     return (
       <div className="App">
         < Header />
@@ -45,10 +78,10 @@ class App extends Component {
           <div id='scissors-btn'>
             <img src='/images/scissors.png' alt="scissors" onClick={() => this.setState({ userOne: weapons[3] })}/>
           </div>
-
+  
 
         </div>
-        <h1>{this.state.computer}</h1>
+        <h1>{this.state.winner}</h1>
         <button type='button' onClick={this.playGame} >Play</button>
       </div>
 
