@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/header.component.jsx'
-// import './components/image_list/image_list.style.css'
+import './components/image_list/image_list.style.css'
 
 
 const weapons = ['rock', 'paper', 'scissors']
@@ -16,7 +16,7 @@ class App extends Component {
     }
   }
 
-  playGame = (rules) => {
+  playGame = () => {
     let counter = 0;
     let gameInterval = setInterval(() => {
       counter++;
@@ -30,7 +30,7 @@ class App extends Component {
           winner: this.selectWinner()
         });
       }
-    }, 100);
+    }, 500);
     
   }
 
@@ -53,18 +53,14 @@ class App extends Component {
  
 
 
-  
- 
-  
-
-
 
   render() {
     
     return (
       <div className="App">
         < Header />
-
+        <h3>Select Weapon <br />Player: {this.state.userOne}</h3>
+        <h3>Computer: <br />{this.state.computer}</h3>
         <div className="hands">
 
           <div id="rock-btn" >
@@ -76,7 +72,7 @@ class App extends Component {
           </div>
 
           <div id='scissors-btn'>
-            <img src='/images/scissors.png' alt="scissors" onClick={() => this.setState({ userOne: weapons[3] })}/>
+            <img src='/images/scissors.png' alt="scissors" onClick={() => this.setState({ userOne: weapons[2] })}/>
           </div>
   
 
