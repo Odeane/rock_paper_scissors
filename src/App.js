@@ -27,15 +27,15 @@ class App extends Component {
       if (counter > 5) {
         clearInterval(gameInterval);
         this.setState({
-          winner: this.selectWinner()
+          winner: this.chooseWinner()
         });
       }
     }, 500);
     
   }
 
-  // Logic......
-  selectWinner = () => {
+  
+  chooseWinner = () => {
     const { userOne, computer} = this.state;
 
     if (userOne === computer) {
@@ -45,39 +45,32 @@ class App extends Component {
       (userOne === "scissors" && computer === "paper") ||
       (userOne === "paper" && computer === "rock")
     ) {
-      return "User One Wins!";
+      return "You Won!";
     } else {
-      return "Computer Wins!";
+      return "Loser! Try again";
     }
   };
- 
-
-
-
   render() {
-    
     return (
       <div className="App">
         < Header />
-        <h3>Select Weapon <br />Player: {this.state.userOne}</h3>
+        <br />
+        <h3>Select Weapon <br /> <br/>Player: {this.state.userOne}</h3>
+        <br/>
         <h3>Computer: <br />{this.state.computer}</h3>
         <div className="hands">
-
           <div id="rock-btn" >
             <img src="/images/rock.png" alt="rock" onClick ={() => this.setState({userOne: weapons[0]}) }/>
           </div>
-
           <div id='paper-btn'>
             <img src="/images/paper.png" alt="paper" onClick={() => this.setState({ userOne: weapons[1] })}/>
           </div>
-
           <div id='scissors-btn'>
             <img src='/images/scissors.png' alt="scissors" onClick={() => this.setState({ userOne: weapons[2] })}/>
           </div>
-  
-
         </div>
         <h1>{this.state.winner}</h1>
+        <br/><br/>
         <button type='button' onClick={this.playGame} >Play</button>
       </div>
 
