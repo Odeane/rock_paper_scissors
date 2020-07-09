@@ -33,13 +33,11 @@ class App extends Component {
     }, 500);
     
   }
-
-  
   chooseWinner = () => {
     const { userOne, computer} = this.state;
 
     if (userOne === computer) {
-      return "Oops it's a Tie!";
+      return "Even steven, Try again!";
     } else if (
       (userOne === "rock" && computer === "scissors") ||
       (userOne === "scissors" && computer === "paper") ||
@@ -55,9 +53,9 @@ class App extends Component {
       <div className="App">
         < Header />
         <br />
-        <h3>Select Weapon <br /> <br/>Player: {this.state.userOne}</h3>
-        <br/>
-        <h3>Computer: <br />{this.state.computer}</h3>
+        <h3>Select Weapon <br /> <br />Player: <br /> <span className = 'weap'>{this.state.userOne}</span></h3>
+        <br /><br />
+        <h3>Computer: <br /><span className='weap'>{this.state.computer}</span></h3>
         <div className="hands">
           <div id="rock-btn" >
             <img src="/images/rock.png" alt="rock" onClick ={() => this.setState({userOne: weapons[0]}) }/>

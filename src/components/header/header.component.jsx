@@ -1,8 +1,8 @@
 import React from 'react';
 import './header.style.css'
 const Header = () => {
-  return (<div id='header'><ul>
-  
+  return (<div id='header'>
+    <ul>
     <li>R</li>
     <li>O</li>
     <li>C</li>
@@ -22,9 +22,6 @@ const Header = () => {
     <li>O</li>
     <li>R</li>
     <li>S</li>
-    
-
-  
   </ul>
   
   </div>)
