@@ -70,8 +70,11 @@ class App extends Component {
           </div>
         </div>
         <h1>{this.state.winner}</h1>
-        <br/><br/>
-        <button type='button' onClick={this.playGame} >Play</button>
+        <br /><br />
+        <div className='middle' >
+          <button className='btn btn2' type='button' onClick={this.playGame} >Play</button>
+        </div>
+        
       </div>
 
     )
