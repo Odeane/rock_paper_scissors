@@ -26,8 +26,6 @@ export default class Examples extends Component {
     this.openModal()
   }
 
-  
-
   render() {
     return (
       <section >
@@ -35,11 +33,11 @@ export default class Examples extends Component {
           <Modal visible={this.state.visible} width="400" height="300" >
             <div className='modal'>
               <h1 id='rules'>Instructions</h1><br/>
-              <p id='rlist'>Click on weapon to select</p><br />
-              <p id='rlist'>Press PLAY</p><br />
-              <p id='rlist'>Enjoy!!!</p><br />
+              <p className='rlist'>Click on weapon to select</p><br />
+              <p className='rlist'>Press PLAY</p><br />
+              <p className='rlist'>Enjoy!!!</p><br />
 
-              <button><a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a></button>
+              <button ><a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a></button>
             </div>
           </Modal>
         </div>

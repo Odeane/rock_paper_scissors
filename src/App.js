@@ -53,8 +53,6 @@ class App extends Component {
     }
   };
 
-  
-
   render() {
     return (
       <div className="App">
@@ -62,7 +60,7 @@ class App extends Component {
         <br />
         <h3>Select Weapon <br /> <br />Player: <br /> <span className = 'weap'>{this.state.userOne}</span></h3>
         <br /><br />
-        <Popup/>
+        
         <h3>Computer: <br /><span className='weap'>{this.state.computer}</span></h3>
         <div className="hands">
           <div id="rock-btn" >
@@ -75,12 +73,12 @@ class App extends Component {
             <img src='/images/scissors.png' alt="scissors" onClick={() => this.setState({ userOne: weapons[2] })}/>
           </div>
         </div>
-        <h1>{this.state.winner}</h1>
+        <h1 id='msg'>{this.state.winner}</h1>
         <br /><br />
         <div className='middle' >
           <button className='btn btn2' type='button' onClick={this.playGame} >Play</button>
         </div>
-        
+        <Popup />
       </div>
 
     )

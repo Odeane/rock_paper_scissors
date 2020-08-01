@@ -1,6 +1,8 @@
 describe('Rock paper scissors game', () => {
   beforeEach(() => {
     cy.visit('/')
+    cy.get('button > a').click()
+   
   })
 
   describe('RPS game interface', () => {
