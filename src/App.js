@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/header/header.component.jsx'
 import './components/image_list/image_list.style.css'
+import Popup from './components/popup/Popup'
 
 
 const weapons = ['rock', 'paper', 'scissors']
@@ -12,7 +13,8 @@ class App extends Component {
     this.state = {
       userOne: '',
       computer: '',
-      winner:''
+      winner: '',
+      score: 0
     }
   }
 
@@ -38,16 +40,21 @@ class App extends Component {
 
     if (userOne === computer) {
       return "Even steven, Try again!";
+      
     } else if (
       (userOne === "rock" && computer === "scissors") ||
       (userOne === "scissors" && computer === "paper") ||
       (userOne === "paper" && computer === "rock")
     ) {
+      
       return "You Won!";
     } else {
       return "Loser! Try again";
     }
   };
+
+  
+
   render() {
     return (
       <div className="App">
@@ -55,6 +62,7 @@ class App extends Component {
         <br />
         <h3>Select Weapon <br /> <br />Player: <br /> <span className = 'weap'>{this.state.userOne}</span></h3>
         <br /><br />
+        <Popup/>
         <h3>Computer: <br /><span className='weap'>{this.state.computer}</span></h3>
         <div className="hands">
           <div id="rock-btn" >
