@@ -1,4 +1,5 @@
 ## Rock, Paper, Scissors Challenge
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a4bad85f-3e40-4348-b42c-5e5c5b293558/deploy-status)](https://app.netlify.com/sites/odeanerockpaperscissors/deploys)
 
 ###Authors
 [Odeane Croney](https://github.com/Odeane)
