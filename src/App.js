@@ -63,13 +63,9 @@ class App extends Component {
         <div className="dashboard">
           <br />
           <h3>Select Weapon <br /> <br />Player: <span className='weap'>{this.state.userOne}</span></h3>
-          <br /><br />
-
+          <Score userOneScore={this.state.userOneScore} computerScore={this.state.computerScore} />
           <h3>Computer: <span className='weap'>{this.state.computer}</span></h3>
         </div>
-        
-        <Score userOneScore={this.state.userOneScore} computerScore={this.state.computerScore} />
-        
         <div className="hands">
           <div id="rock-btn" >
             <img src="/images/rock.png" alt="rock" onClick ={() => this.setState({userOne: weapons[0]}) }/>
