@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/header/header.component.jsx'
 import './components/image_list/image_list.style.css'
 import Popup from './components/popup/Popup'
+import Score from './components/scoreboard/Score';
 
 
 const weapons = ['rock', 'paper', 'scissors']
@@ -14,7 +15,8 @@ class App extends Component {
       userOne: '',
       computer: '',
       winner: '',
-      score: 0
+      userOneScore: 0,
+      computerScore: 0
     }
   }
 
@@ -46,9 +48,10 @@ class App extends Component {
       (userOne === "scissors" && computer === "paper") ||
       (userOne === "paper" && computer === "rock")
     ) {
-      
+      this.setState({userOneScore: this.state.userOneScore + 1})
       return "You Won!";
     } else {
+      this.setState({ computerScore: this.state.computerScore + 1 })
       return "Loser! Try again";
     }
   };
@@ -57,11 +60,12 @@ class App extends Component {
     return (
       <div className="App">
         < Header />
-        <br />
-        <h3>Select Weapon <br /> <br />Player: <br /> <span className = 'weap'>{this.state.userOne}</span></h3>
-        <br /><br />
-        
-        <h3>Computer: <br /><span className='weap'>{this.state.computer}</span></h3>
+        <div className="dashboard">
+          <br />
+          <h3>Select Weapon <br /> <br />Player: <span className='weap'>{this.state.userOne}</span></h3>
+          <Score userOneScore={this.state.userOneScore} computerScore={this.state.computerScore} />
+          <h3>Computer: <span className='weap'>{this.state.computer}</span></h3>
+        </div>
         <div className="hands">
           <div id="rock-btn" >
             <img src="/images/rock.png" alt="rock" onClick ={() => this.setState({userOne: weapons[0]}) }/>
